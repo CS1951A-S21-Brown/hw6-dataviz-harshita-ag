@@ -10,19 +10,112 @@
     </head>
 <body>
     <div class="header">
-        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+        <h3>Trends related to Video Games Sales &raquo;</h3>
     </div>
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
         <div class="col-lg-6">
             <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+            <hr>
+            <div id="graph2"></div>
         </div>
         <div class="col-lg-6">
+            <h4>Top 10 Video Game Publishers for each Genre</h4>
+            <div id="butt">
+            <button type="button" class="btn btn-info" onclick="setData(0, 'Action')">Action</button>
+            <button type="button" class="btn btn-info" onclick="setData(1, 'Adventure')">Adventure</button>
+            <button type="button" class="btn btn-info" onclick="setData(2, 'Fighting')">Fighting</button>
+            <button type="button" class="btn btn-info" onclick="setData(3, 'Misc')">Misc</button>
+            <button type="button" class="btn btn-info" onclick="setData(4, 'Platform')">Platform</button>
+            <button type="button" class="btn btn-info" onclick="setData(5, 'Puzzle')">Puzzle</button>
+            <button type="button" class="btn btn-info" onclick="setData(6, 'Racing')">Racing</button>
+            <button type="button" class="btn btn-info" onclick="setData(7, 'Role-Playing')">Role-playing</button>
+            <button type="button" class="btn btn-info" onclick="setData(8, 'Shooter')">Shooter</button>
+            <button type="button" class="btn btn-info" onclick="setData(9, 'Simulation')">Simulation</button>
+            <button type="button" class="btn btn-info" onclick="setData(10, 'Sports')">Sports</button>
+            <button type="button" class="btn btn-info" onclick="setData(11, 'Strategy')">Strategy</button>
+            </div>
+            <hr>
+
             <div id="graph3"></div>
         </div>
     </div>
+    <div id="writing"> 
+    <br>1. My dashboard answers all three questions with the three different graphs. The first lollipop chart looks at the "Top 10 Video Games of all time"
+    by showing the Global Sales for the specific video games. As we're mainly concerned with the names of the Video Games, and not
+    the number, the lollipop chart presents this information, while also showing the general trend of the data. The second graph is a 
+    stacked bar chart that represents sales for different regions for each video game genre. It answers the question of the most popular 
+    genre, as the overall height of the bar chart represents this. The size of each stack within a bar makes it easy to visualise the most popular region for each genre, 
+    and the color of the stack makes it easy to understand the most popular genres for each region. The tooltips provide exact numerical data related to this, as well as specify the region. The third chart answers the question of 
+    which publisher to pick based on the genre. The user can select the genre by clicking on the relevant button, then look at the first bar
+    to get the name of the top publisher. The user can also compare how much better the publisher is for the genre comapared to 
+    the other publishers by looking the the values for Global Sales.  </br>
+        <br> 2. Three ways in which D3 was useful and helped my visualisation was when I made my carchart for the top 
+    publishers for the different genres interactive. Using D3 made it very easy to switch between different 
+csv files for each genre and make the bars change and move in a fluid, dynamic way. Using D3 was also helpful
+as I was able to create tooltip that clarified the data for my stacked bar charts and provided detailed information 
+for each section. Doing this allows people who want spefific numeric information, beyonf the trend to access the data
+easily. The third way in which D3 helped my visualisation is that as it's written in JavaScript, and uses a functional 
+style, it allowed me to easily create functions to manipulate aspects of my visualisation.  </br>
+        <br>3. D3 might not be the best tool for creating visualiations as it has a relatively steep learnign curve comapred 
+        to newer ways of visualising that don't require learning entire libraries. Also, when data points become really large, 
+        then having too many SVG elements can slow everything down, which means D3 might not always be the best tool
+        for creating visualisations. Another reason would be that D3 isn't great when we want to conceal the data we're 
+        using for the visualisations. </br>
+        <br>4. Some aspects of my dashboard that make it accessible are the tooltips for the 'Genre Sales based on Region'
+    chart. Poeple who are pressed on time, or just want to get the overall summary of the findings can visually see
+the difference in the size of the bars, but if they want specific numerical data, they can hover over the block and access
+it easily via the tooltip. All the graphs on my dashboard have a title, and label the axis, which makes it quicker to read.
+When looking at the top publishers per genre, the title of the graph changes when a genre button is clicked, which makes
+it easily understandable, and the white space between the bars makes the data easy to read, even for people with visual impairments
+as it increases the contrast. The buttons are easy to click, which is helpful for users needing assistive technology. Some aspects of 
+my dashbaord aren't accessible to users with visual impairments, especially complete blindness, as there isn't a way to 
+access to descriptive alt text. Furthermore, users with Achromatopsia wouldn't be able to derive meaningful conclusions from the stacked bar chart 
+without being able to discern the separate stacks that represent each region.
+ </br>
+        <br> As I created separate CSV files for each genre, linking the files to the bar graph for each genre
+    would have made my data more accessible — especially for people with cisual impairments. As the data is sorted in descending order or Sales, 
+having access to the CSV files would easily convery the information the bar graph is conveying. Furthermore, as repetition
+is the best way to ensure you've made your point for multiple audiences, to account for people with color-blindness, I would
+make sure the the stacks in my bar graph would use different patterns along with the different colors, as that would 
+make visualising the separation between the stakcs easier. Furthermore, I would want to add in some more sensory experiences, 
+such as sound, what would speak out the most important conclusion from each chart, but also allow for access
+to more information if needed. </br>
+<br> 5. When designing my Javascript code, I would have structured my SVG markup in a way that would allow users to 
+tab through each data point, so that blind people would more easily be able to consume the content. I didn't take the time
+to research how this could be done before I had already started creating the graphs, and was focussing more on the 
+visualisation of the content rather than making the SVG markup accessible. This is soemthing I would take into account
+before I started writing any code next time. Another stage in which I could have made my dashboard more accessible is when 
+parsing the data by creating additional CSV files with only the relevant data. Although the CSV files I created
+could be used to present simple data tables, especially as a fallback for people with visual impairments, or for those who 
+want access to all the data, and would like to come to their own conclusions, I didn't factor this into account when making the files. 
+Time was definitely a factor that prevented me from understanding how the graphs could be linked to tables that clearly 
+communicated the information. Being more concerned about my perspective of the graphs, rather than trying to think through 
+everyone who might benefit from the visualiation was another factor.  </br>
+
+    </div>
+    <script type="text/javascript">
+        // Define margins for SVG
+        const margin = {top: 40, right: 100, bottom: 120, left: 200};
+        // TODO: Define the number of examples to display on the graph
+        const NUM_EXAMPLES = 10;
+    </script>
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
+    <style>
+        #writing {
+        padding: 50px;
+        margin: 50px;
+}
+    #butt {
+    width: 550px;
+    align-items: center;
+    }
+
+    .btn {
+        margin-bottom: 5px;
+    }
+
+    </style>
 </body>
 </html>
