@@ -21,7 +21,7 @@ let svg = d3.select("#graph1")
 // Set up reference to count SVG group
 // let countRef = svg.append("g");
 
-d3.csv("../data/graph1_data.csv").then(function(data) {
+d3.csv("data/graph1_data.csv").then(function(data) {
     data = data.splice(0, NUM_EXAMPLES)
 
     var x = d3.scaleBand()
@@ -99,7 +99,7 @@ var svg2 = d3.select("#graph2")
     .attr("transform", `translate(${margin.left},${margin.top})`)
 
 
-d3.csv("../data/graph2_data.csv").then(function(data) {
+d3.csv("data/graph2_data.csv").then(function(data) {
     
 
     var subgroups = data.columns.slice(1)
